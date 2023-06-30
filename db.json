@@ -5,22 +5,5 @@
       "id": 1
     }
   ],
-  "gastos": [
-    {
-      "idGasto": 1,
-      "nombreAsociado": "Indique roommate",
-      "monto": null,
-      "descripcion": "",
-      "userAsociate": null,
-      "id": 1
-    },
-    {
-      "idGasto": 2,
-      "nombreAsociado": "Indique roommate",
-      "monto": null,
-      "descripcion": "",
-      "userAsociate": null,
-      "id": 2
-    }
-  ]
+  "gastos": []
 }
