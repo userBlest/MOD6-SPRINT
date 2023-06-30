@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container-nuevoRoommate">
+        <button onclick="postRoomate()">Agregar roommate</button>
+    </div>
+
+    <div class="container-gastos">
+        <h1>Agregar gastos</h1>
+        <label>Nombre:</label>
+        <select id="seleccion">
+            <option selected disabled>Indique roommate</option>
+        </select>
+
+        <label>Descripción:</label>
+        <textarea id="descripcion" type="text" name="descripcion" required></textarea>
+
+        <label>Monto:</label>
+        <input id="monto" name="monto" required>
+        <button onclick="sendForm()">Enviar formulario</button>
+    </div>
+
+    <script type="module" src="option.js"></script>
+    <script src="utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+
+</html>

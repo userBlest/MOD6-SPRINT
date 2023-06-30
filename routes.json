@@ -1,0 +1,3 @@
+{
+    "/gastos/user/:id": "/gastos?userAsociate=:id"
+}
