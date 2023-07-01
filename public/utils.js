@@ -56,27 +56,30 @@ function sendForm() {
 
 const botonAddGastos = document.getElementById('addGastos');
 botonAddGastos.addEventListener("click", () => {
-    axios.get('http://localhost:3000/gastos')
-        .then((response) => {
-            const gastos = response.data
-            const ultimoGastos = gastos[gastos.length - 1];
-            const { nombreAsociado, descripcion, monto, id } = ultimoGastos;
-            const tr = document.getElementById('gastosHistorial')
-            tr.innerHTML += `   
+
+    const seleccion = document.getElementById('seleccion');
+    const selectedOption = seleccion.options[seleccion.selectedIndex];
+    const nombre = selectedOption.textContent;
+    const idAsociado = selectedOption.value;
+    const descripcionForm = document.getElementById('descripcion').value;
+    const montoForm = document.getElementById('monto').value;
+
+    const tr = document.getElementById('gastosHistorial')
+    tr.innerHTML += `   
         <tr>
-        <td>${nombreAsociado}</td>
-        <td>${descripcion}</td>
-        <td>${monto}</td>
+        <td>${nombre}</td>
+        <td>${descripcionForm}</td>
+        <td>${montoForm}</td>
         <td class="d-flex align-items-center justify-content-between">
-            <i class="fas fa-edit text-warning" data-toggle="modal" data-target="#exampleModal"></i>
-            <i class="fas fa-trash-alt text-danger" id="${id}"></i>
+            <i class="fas fa-edit text-warning" data-toggle="modal" data-target="#exampleModal" data-nombre="${nombre}" data-descr="${descripcionForm}" data-monto="${montoForm}"></i>
+            <i class="fas fa-trash-alt text-danger" id="${idAsociado}"></i>
         </td>
         </tr>
         `
-        })
 })
 
-const botonAddRoommie = document.getElementById('postRoommie');
+
+botonAddRoommie = document.getElementById('addGastos')
 botonAddRoommie.addEventListener("click", () => {
     axios.get('http://localhost:3000/users')
         .then((response) => {
@@ -93,8 +96,5 @@ botonAddRoommie.addEventListener("click", () => {
             <td class="text-success">100000</td>
             </tr>
             `
-
-
         })
 })
-

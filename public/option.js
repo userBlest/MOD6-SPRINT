@@ -1,16 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
   const userSelect = document.getElementById('seleccion');
 
-  const borrarGastos = document.querySelectorAll('.fas.fa-trash-alt.text-danger');
-  borrarGastos.forEach(borrarGasto => {
-    const id = borrarGasto.id;
-    borrarGasto.addEventListener('click', async () => {
-      try {
-        await axios.delete(`http://localhost:3000/gastos/${id}`);
-        console.log(`Se ha eliminado el registro con el ID ${id}`);
-      } catch (error) {
-        console.log('Ha ocurrido un error intentando borrar el registro', error);
-      }
+  const elementos = document.querySelectorAll('.fas.fa-trash-alt.text-danger');
+  elementos.forEach(elemento => {
+    const id = elemento.id;
+    elemento.addEventListener('click', () => {
+      console.log(`botón tocado ${id}`);
+
+      axios.delete(`http://localhost:3000/gastos/${id}`)
+        .then(() => {
+          console.log(`Se ha eliminado el registro con el ID ${id}`);
+        })
+        .catch(error => {
+          console.log('Ha ocurrido un error intentando borrar el registro', error);
+        });
     });
   });
 
@@ -25,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <td>${gastos.descripcion}</td>
         <td>${gastos.monto}</td>
         <td class="d-flex align-items-center justify-content-between">
-            <i class="fas fa-edit text-warning" data-toggle="modal" data-target="#exampleModal"></i>
+        <i class="fas fa-edit text-warning" data-toggle="modal" data-target="#exampleModal" data-nombre="${gastos.nombreAsociado}" data-descr="${gastos.descripcion}" data-monto="${gastos.monto}"></i>
             <i class="fas fa-trash-alt text-danger" id="${gastos.id}" ></i>
         </td>
         </tr>
@@ -59,16 +62,3 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Error al obtener la lista de usuarios', error);
     });
 });
-
-// function insertarDataModal() {
-
-//   const 
-//   axios.get('http://localhost:3000/gastos')
-
-//   let modalBody = document.querySelector('.modal-body')
-//   modalBody.innerHTML = `
-//       <h5>${data1}</h5>
-//       <img src=${data2} class="img-fluid"> </img>
-//       <p class="p-3">${data3}</p>
-//       `
-// }

@@ -28,75 +28,11 @@
     },
     {
       "idGasto": 2,
-      "nombreAsociado": "Lisanna Winkelman",
+      "nombreAsociado": "Jens-Uwe Kipp",
       "monto": 500,
-      "descripcion": "Agua",
-      "userAsociate": 2,
+      "descripcion": "Porotos",
+      "userAsociate": 3,
       "id": 2
-    },
-    {
-      "idGasto": 3,
-      "nombreAsociado": "Jens-Uwe Kipp",
-      "monto": 1500,
-      "descripcion": "Luz",
-      "userAsociate": 3,
-      "id": 3
-    },
-    {
-      "idGasto": 4,
-      "nombreAsociado": "Jens-Uwe Kipp",
-      "monto": 1500,
-      "descripcion": "Luz",
-      "userAsociate": 3,
-      "id": 4
-    },
-    {
-      "idGasto": 5,
-      "nombreAsociado": "Jens-Uwe Kipp",
-      "monto": 1500,
-      "descripcion": "Luz",
-      "userAsociate": 3,
-      "id": 5
-    },
-    {
-      "idGasto": 6,
-      "nombreAsociado": "Rose Pelletier",
-      "monto": 1500,
-      "descripcion": "Pan",
-      "userAsociate": 4,
-      "id": 6
-    },
-    {
-      "idGasto": 7,
-      "nombreAsociado": "Rose Pelletier",
-      "monto": 3500,
-      "descripcion": "Huevos",
-      "userAsociate": 4,
-      "id": 7
-    },
-    {
-      "idGasto": 8,
-      "nombreAsociado": "Rose Pelletier",
-      "monto": 3500,
-      "descripcion": "Huevos",
-      "userAsociate": 4,
-      "id": 8
-    },
-    {
-      "idGasto": 9,
-      "nombreAsociado": "Rose Pelletier",
-      "monto": 3500,
-      "descripcion": "Pasta de dientes",
-      "userAsociate": 4,
-      "id": 9
-    },
-    {
-      "idGasto": 10,
-      "nombreAsociado": "Rose Pelletier",
-      "monto": 3500,
-      "descripcion": "Pasta de dientes",
-      "userAsociate": 4,
-      "id": 10
     }
   ]
 }

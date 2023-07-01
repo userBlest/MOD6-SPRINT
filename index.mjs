@@ -21,6 +21,10 @@ server.post('/gastos', (req, res) => {
   res.json(nuevoGasto);
 });
 
+server.delete('/gastos', (req, res) => {
+  const borrarGasto = req.body
+})
+
 const port = 3000;
 server.listen(port, () => {
   console.log(`JSON Server está corriendo en http://localhost:${port}`);
