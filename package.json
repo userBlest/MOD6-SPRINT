@@ -5,7 +5,8 @@
   "main": "index.mjs",
   "type": "module",
   "scripts": {
-    "dev": "nodemon index.mjs"
+    "dev": "node --experimental-modules index.mjs",
+    "json-server": "json-server --watch db.json"
   },
   "author": "",
   "license": "ISC",
