@@ -38,22 +38,16 @@
     <div class="row w-100 m-auto">
         <div class="col-4">
             <h5>Compañero de cuarto</h5>
-            <button class="btn text-white mb-2" onclick="postRoomate()">
+            <button id="postRoommie" class="btn text-white mb-2" onclick="postRoomate()">
                 Agregar Compañero
             </button>
-            <table class="table">
+            <table class="table" id="tabla">
                 <thead class="text-white">
                     <th>Nombre</th>
                     <th>Debe</th>
                     <th>Cuota de arriendo</th>
                 </thead>
                 <tbody class="text-white" id="roommates">
-                    <tr>
-                        <td>Juan Gonzales</td>
-                        <td class="text-danger">-12500</td>
-                        <td class="text-success">100000</td>
-                    </tr>
-
                 </tbody>
             </table>
         </div>
@@ -76,8 +70,8 @@
                     <input class="form-control w-50 mb-2" id="monto" name="monto" required>
                 </div>
                 <div class="d-block my-1">
-                    <button class="btn text-white m-auto" onclick="sendForm()">
-                        Enviar formulario
+                    <button id="addGastos" class="btn text-white m-auto" onclick="sendForm()">
+                        Agregar gastos
                     </button>
                 </div>
             </div>
@@ -95,16 +89,6 @@
                         <th>-</th>
                     </thead>
                     <tbody class="text-white" id="gastosHistorial">
-                        <tr>
-                            <td>Juan Gonzales</td>
-                            <td>Articulos de aseo personal</td>
-                            <td>50000</td>
-                            <td class="d-flex align-items-center justify-content-between">
-                                <i class="fas fa-edit text-warning" data-toggle="modal" data-target="#exampleModal"></i>
-                                <i class="fas fa-trash-alt text-danger"></i>
-                            </td>
-                        </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -134,7 +118,7 @@
                         </div>
                         <div class="d-block my-1">
                             <button class="btn text-white m-auto">
-                                Agregar
+                                Actualizar
                             </button>
                         </div>
                     </div>

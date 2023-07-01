@@ -53,3 +53,48 @@ function sendForm() {
             console.error('Ha ocurrido un error obteniendo los gastos', error);
         });
 }
+
+const botonAddGastos = document.getElementById('addGastos');
+botonAddGastos.addEventListener("click", () => {
+    axios.get('http://localhost:3000/gastos')
+        .then((response) => {
+            const gastos = response.data
+            const ultimoGastos = gastos[gastos.length - 1];
+            const { nombreAsociado, descripcion, monto, id } = ultimoGastos;
+            const tr = document.getElementById('gastosHistorial')
+            tr.innerHTML += `   
+        <tr>
+        <td>${nombreAsociado}</td>
+        <td>${descripcion}</td>
+        <td>${monto}</td>
+        <td class="d-flex align-items-center justify-content-between">
+            <i class="fas fa-edit text-warning" data-toggle="modal" data-target="#exampleModal"></i>
+            <i class="fas fa-trash-alt text-danger" id="${id}"></i>
+        </td>
+        </tr>
+        `
+        })
+})
+
+const botonAddRoommie = document.getElementById('postRoommie');
+botonAddRoommie.addEventListener("click", () => {
+    axios.get('http://localhost:3000/users')
+        .then((response) => {
+            //Deberia hacerse un getelementbyID al form y no buscarlo por metodo GET
+            const usuarios = response.data
+            //Con esto saco al último usuario agregado de la BD.
+            const ultimoUsuario = usuarios[usuarios.length - 1];
+            const { nombre } = ultimoUsuario;
+            const tr = document.getElementById('roommates')
+            tr.innerHTML += `     
+            <tr>                  
+            <td>${nombre} </td>
+            <td class="text-danger">100000</td>
+            <td class="text-success">100000</td>
+            </tr>
+            `
+
+
+        })
+})
+
