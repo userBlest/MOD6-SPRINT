@@ -71,8 +71,8 @@ botonAddGastos.addEventListener("click", () => {
         <td>${descripcionForm}</td>
         <td>${montoForm}</td>
         <td class="d-flex align-items-center justify-content-between">
-            <i class="fas fa-edit text-warning editar" data-toggle="modal" data-target="#exampleModal" data-nombre="${nombre}" data-descr="${descripcionForm}" data-monto="${montoForm}"></i>
-            <i class="fas fa-trash-alt text-danger basurero" id="cons${idAsociado}"></i>
+            <i class="fas fa-edit text-warning editar" data-toggle="modal" data-target="#exampleModal" data-nombre="${nombre}" data-descr="${descripcionForm}" data-monto="${montoForm}" data-id="${idAsociado}"></i>
+            <i class="fas fa-trash-alt text-danger basurero" id="cons${idAsociado}" data-toggle="modal" data-target="#confirmar${idAsociado}"></i>
         </td>
         </tr>
         `

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <td>${gastos.monto}</td>
     <td class="d-flex align-items-center justify-content-between">
     <i class="fas fa-edit text-warning editar" data-toggle="modal" data-target="#exampleModal" data-nombre="${gastos.nombreAsociado}" data-descr="${gastos.descripcion}" data-monto="${gastos.monto}" data-id="${gastos.id}"></i>
-    <i class="fas fa-trash-alt text-danger basurero" id="${gastos.id}"></i>
+    <i class="fas fa-trash-alt text-danger basurero" id="${gastos.id}" data-toggle="modal" data-target="#confirmar"></i>
     </td>
     </tr>
     `
@@ -35,15 +35,28 @@ document.addEventListener('DOMContentLoaded', () => {
         elemento.addEventListener('click', (e) => {
           const id = e.target.id
           console.log(`botón tocado ${id}`);
-          axios.delete(`http://localhost:3000/gastos/${id}`)
-            .then(() => {
+
+          const botonConfirmar = document.getElementById('btnconfirmar')
+          botonConfirmar.addEventListener('click', async () => {
+            try {
+              await axios.delete(`http://localhost:3000/gastos/${id}`)
+              location.reload()
               console.log(`Se ha eliminado el registro con el ID ${id}`);
-              location.reload();
-            })
-            .catch(error => {
-              console.log('Ha ocurrido un error intentando borrar el registro', error);
-            });
+            } catch (error) {
+              console.log(error)
+            }
+          })
+          // axios.delete(`http://localhost:3000/gastos/${id}`)
+          //   .then(() => {
+          //     console.log(`Se ha eliminado el registro con el ID ${id}`);
+          //     location.reload();
+          //   })
+          //   .catch(error => {
+          //     console.log('Ha ocurrido un error intentando borrar el registro', error);
+          //   });
         });
+
+
 
         const botones = document.querySelectorAll('.editar')
         console.log(botones)
@@ -122,7 +135,4 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => {
       console.error('Error al obtener la lista de usuarios', error);
     });
-
-
-
 });
