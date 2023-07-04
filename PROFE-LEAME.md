@@ -7,3 +7,5 @@ npm run dev
 después agregue otra terminal en el simbolo más que está al lado derecho de la misma terminal y ejecutar el siguiente comando:
 
 npm run json
+
+
