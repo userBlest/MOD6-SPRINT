@@ -79,7 +79,7 @@ botonAddGastos.addEventListener("click", () => {
 })
 
 
-botonAddRoommie = document.getElementById('addGastos')
+botonAddRoommie = document.getElementById('postRoommie')
 botonAddRoommie.addEventListener("click", () => {
     axios.get('http://localhost:3000/users')
         .then((response) => {
