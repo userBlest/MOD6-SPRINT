@@ -15,23 +15,23 @@
     {
       "nombre": "Rose Pelletier",
       "id": 4
+    },
+    {
+      "nombre": "Lucas Colunga",
+      "id": 5
+    },
+    {
+      "nombre": "Sushmitha Mardhekar",
+      "id": 6
     }
   ],
   "gastos": [
     {
-      "idGasto": 1,
-      "nombreAsociado": "Lisanna Winkelman",
-      "monto": 500,
-      "descripcion": "Agua",
-      "userAsociate": 2,
-      "id": 1
-    },
-    {
       "idGasto": 2,
-      "nombreAsociado": "Jens-Uwe Kipp",
-      "monto": 500,
-      "descripcion": "Porotos",
-      "userAsociate": 3,
+      "nombreAsociado": "Rose Pelletier",
+      "monto": "1500",
+      "descripcion": "Poroto",
+      "userAsociate": 4,
       "id": 2
     }
   ]
